@@ -63,7 +63,7 @@ async function generateQRCode():Promise<void>{
             const generatedpath = path.join(__dirname, 'generated', `${uuid}.png`);
             const qr_png= qr.image(finalURL, { type: 'png' });
             await qr_png.pipe(fs.createWriteStream(generatedpath,'utf-8'));
-            console.log(`Your qr is generated in the folder /generated and your file name is ${uuid}.png`);
+            console.log(`Your qr is generated in the folder /dist/generated and your file name is ${uuid}.png`);
         }catch(e){
             console.log(e);
             console.log("Something went wrong!")
